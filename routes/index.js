@@ -55,7 +55,7 @@ router.get('/testexport', function(req, res, next){
   }
   xlsx.writeFile(workbook, 'temp/tempExcel.xlsx');
  // reads the file at the temporary location
-   fs.readFile('temp/tempExcel.csv', function(err, file){
+   fs.readFile('temp/tempExcel.xlsx', function(err, file){
     res.setHeader('Content-disposition', 'attachment; filename=export.xlsx');
     res.setHeader('Content-type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     var filestream = fs.createReadStream('temp/tempExcel.xlsx');
